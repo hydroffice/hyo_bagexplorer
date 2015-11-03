@@ -50,7 +50,7 @@ if is_darwin:
     icon_file = os.path.join(icon_folder, 'BAGExplorer.icns')
 
 version = '0.2.3.dev1'
-app_name = 'BAGExplorer_' + version
+app_name = 'BAGExplorer_'  # + version
     
 a = Analysis(['BAGExplorer.py'],
              pathex=[],

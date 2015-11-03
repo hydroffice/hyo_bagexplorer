@@ -1,5 +1,5 @@
-HydrOffice BAG and BAG Explorer
-===============================
+HydrOffice BAG Explorer
+=======================
 
 .. image:: https://badge.fury.io/py/hydroffice.bag_explorer.png
     :target: http://badge.fury.io/py/hydroffice.bag_explorer
@@ -35,11 +35,7 @@ HydrOffice is a research development environment for ocean mapping. Its aim is t
 About this hydro-package
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This package provides:
-
-* the :code:`bag` package which provides functionalities to deal with BAG data files
-
-* the :code:`bag_explorer` package that uses *HDF Compass* (a viewer program for HDF5 and related formats) and the BAG-specific plugin to build the resulting *BAG Explorer* application.
+The :code:`bag_explorer` package that uses *HDF Compass* (a viewer program for HDF5 and related formats) and the BAG-specific plugin to build the resulting *BAG Explorer* application.
 
 HDF Compass is written in Python, but ships as a native application on Windows, OS X, and Linux, by using PyInstaller and Py2App to package the app.
 For more info about HDF Compass, visit the `GitHub <http://github.com/HDFGroup/hdf-compass>`_ repository and the `project <https://www.hdfgroup.org/projects/compass/>`_ web page.
@@ -187,6 +183,6 @@ If you don't already have, set up an SSH identity: https://confluence.atlassian.
 Other info
 ----------
 
-* Bitbucket: `https://bitbucket.org/ccomjhc/hyo_bag <https://bitbucket.org/ccomjhc/hyo_bag>`_
+* Bitbucket: `https://bitbucket.org/ccomjhc/hyo_bag_explorer <https://bitbucket.org/ccomjhc/hyo_bag_explorer>`_
 * Project page: `http://ccom.unh.edu/project/hydroffice <http://ccom.unh.edu/project/hydroffice>`_
-* License: BSD-like license (See `COPYING <https://bitbucket.org/ccomjhc/hyo_bag/raw/tip/COPYING.txt>`_)
+* License: BSD-like license (See `COPYING <https://bitbucket.org/ccomjhc/hyo_bag_explorer/raw/tip/COPYING.txt>`_)

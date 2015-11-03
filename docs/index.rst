@@ -1,8 +1,8 @@
-.. HydrOffice BAG documentation master file, created by
+.. HydrOffice BAG Explorer documentation master file, created by
    sphinx-quickstart on Sun Oct 18 16:44:37 2015.
 
-HydrOffice BAG's documentation
-==============================
+HydrOffice BAG Explorer's documentation
+=======================================
 
 Contents
 --------
@@ -19,6 +19,7 @@ Contents
    api/modules
    how_to_release
    how_to_freeze
+   banner
 
 Indices and tables
 ==================

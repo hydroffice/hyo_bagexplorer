@@ -3,11 +3,11 @@ License
 
 
 Copyright Notice and License Terms for
-hydroffice.bag - BAG package for HydrOffice
+hydroffice.bag_explorer - BAG Explorer package for HydrOffice
 -----------------------------------------------------------------------------
 
-hydroffice.bag
-Copyright 2015- by G.Masetti and B.R.Calder (CCOM, UNH).
+hydroffice.bag_explorer
+Copyright 2015- by G.Masetti and B.R.Calder.
 
 All rights reserved.
 

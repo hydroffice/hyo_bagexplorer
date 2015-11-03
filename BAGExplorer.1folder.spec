@@ -51,7 +51,7 @@ if is_darwin:
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
              hiddenimports=[],
-             excludes=["PySide"],
+             excludes=["PySide", "scipy", "PyQt4", "pandas", "IPython"],
              hookspath=None,
              runtime_hooks=None)
 

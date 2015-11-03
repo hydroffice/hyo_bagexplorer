@@ -4,7 +4,7 @@ hydroffice.bag_explorer - BAG Explorer application for HydrOffice
 -----------------------------------------------------------------------------
 
 hydroffice.bag_explorer
-Copyright 2015- by G.Masetti and B.R.Calder (CCOM, UNH).
+Copyright 2015- by G.Masetti and B.R.Calder.
 
 All rights reserved.
 

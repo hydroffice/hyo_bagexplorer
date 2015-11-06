@@ -17,4 +17,6 @@ __copyright__ = 'Copyright 2015 Giuseppe Masetti, Brian R. Calder (CCOM/JHC, UNH
 
 
 # def hyo():
-#     return __doc__, __version__
+def hyo_app():
+# def hyo_lib():
+    return __doc__, __version__

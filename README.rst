@@ -1,9 +1,6 @@
 HydrOffice BAG Explorer
 =======================
 
-.. image:: https://readthedocs.org/projects/hydroffice-bag_explorer/badge/?version=latest
-    :target: http://hydroffice-bag_explorer.readthedocs.org/en/latest/?badge=latest
-    :alt: Documentation Status
 
 General info
 ------------

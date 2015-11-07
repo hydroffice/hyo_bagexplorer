@@ -9,11 +9,11 @@ import logging
 log = logging.getLogger(__name__)
 log.addHandler(logging.NullHandler())
 
-__version__ = '0.2.4.dev1'
+__version__ = '0.1.0'
 __doc__ = 'BAG Explorer'
 __author__ = 'gmasetti@ccom.unh.edu, brc@ccom.unh.edu'
-__license__ = 'BSD-like license'
-__copyright__ = 'Copyright 2015 Giuseppe Masetti, Brian R. Calder (CCOM/JHC, UNH)'
+__license__ = 'BSD license'
+__copyright__ = 'Copyright 2015 University of New Hampshire'
 
 
 # def hyo():

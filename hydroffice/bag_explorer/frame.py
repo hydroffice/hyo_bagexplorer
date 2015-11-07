@@ -18,6 +18,7 @@ from hydroffice.bag.uncertainty import Uncertainty2Gdal
 from hydroffice.bag.tracklist import TrackList2Csv
 
 ID_ABOUT_BAG_TOOLS = wx.NewId()
+ID_MANUAL_BAG_TOOLS = wx.NewId()
 ID_ABOUT_HDF_COMPASS = wx.NewId()
 ID_OPEN_SAMPLES = wx.NewId()
 
@@ -61,6 +62,7 @@ class InitFrame(frame.InitFrame):
                 m[0].RemoveItem(about_item)
                 m[0].Append(ID_ABOUT_HDF_COMPASS, "&About HDF Compass", "Information about HDF Compass")
                 m[0].AppendSeparator()
+                m[0].Append(ID_MANUAL_BAG_TOOLS, "Online Manual", "Open the online documentation for BAG Tools")
                 m[0].Append(ID_ABOUT_BAG_TOOLS, "&About BAG Tools", "Information about the BAG Tools")
                 m[0].AppendSeparator()
                 m[0].AppendItem(about_item)
@@ -100,6 +102,7 @@ class InitFrame(frame.InitFrame):
         self.Bind(wx.EVT_MENU, self.on_open_samples, id=ID_OPEN_SAMPLES)
         self.Bind(wx.EVT_MENU, self.on_about_bag_explorer, id=wx.ID_ABOUT)
         self.Bind(wx.EVT_MENU, self.on_about_hdf_compass, id=ID_ABOUT_HDF_COMPASS)
+        self.Bind(wx.EVT_MENU, self.on_manual_bag_tools, id=ID_MANUAL_BAG_TOOLS)
         self.Bind(wx.EVT_MENU, self.on_about_bag_tools, id=ID_ABOUT_BAG_TOOLS)
 
         # BAG tools
@@ -121,6 +124,11 @@ class InitFrame(frame.InitFrame):
         self.Bind(wx.EVT_MENU, self.on_meta_validate, id=ID_TOOLS_META_VAL)
         self.Bind(wx.EVT_MENU, self.on_meta_xml, id=ID_TOOLS_META_XML)
 
+    def on_manual_bag_tools(self, evt):
+        """ Open the url with the online documentation for BAG Tools """
+        import webbrowser
+        webbrowser.open('http://giumas.github.io/hyo_bag/stable/index.html')
+
     def on_about_bag_explorer(self, evt):
         """ Display an "About BAG Explorer" dialog """
         from . import __version__
@@ -128,23 +136,43 @@ class InitFrame(frame.InitFrame):
         info = wx.AboutDialogInfo()
         info.Name = "BAG Explorer"
         info.Description = """
-An application for Bathymetric Attributed Grid (BAG) files based on HDF Compass and Hydroffice BAG Tools,
-developed at the Center for Coastal and Ocean Mapping / Joint Hydrographic Center (CCOM/JHC).
+An application to browse and interact with Bathymetric Attributed Grid (BAG) files.
+The application is based on HDF Compass and HydrOffice BAG Tools.
+
+Developed by G.Masetti and B.R.Calder at the Center for Coastal and Ocean Mapping /
+Joint Hydrographic Center (CCOM/JHC).
 """
         info.Version = __version__
         info.License = """
 Copyright (c) 2015, University of New Hampshire
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+1. Redistributions of source code must retain the above copyright notice, this list
+of conditions and the following disclaimer.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
 
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+3. Neither the name of the copyright holder nor the names of its contributors may
+be used to endorse or promote products derived from this software without specific
+prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
         """
         info.Copyright = "(c) 2015 University of New Hampshire"
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAGExplorer_128.png')))
@@ -171,7 +199,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
         info.Version = bag_version
         info.Copyright = "(c) 2015 G.Masetti, B.R.Calder"
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAG_48.png')))
-        info.SetWebSite("https://bitbucket.org/ccomjhc/hyo_bag")
+        info.SetWebSite("https://bitbucket.org/gmasetti/hyo_bag")
         wx.AboutBox(info)
 
     def on_file_open(self, evt):

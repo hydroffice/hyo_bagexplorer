@@ -54,7 +54,7 @@ app_name = 'BAGExplorer'  # + version
     
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
-             hiddenimports=[],
+             hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack'],  # for cartopy
              excludes=["PySide", "scipy", "PyQt4", "pandas", "IPython"],
              hookspath=None,
              runtime_hooks=None)

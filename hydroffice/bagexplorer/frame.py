@@ -100,7 +100,7 @@ class InitFrame(frame.InitFrame):
         self.GetMenuBar().Insert(1, fm, "BAG &Tools")
 
         self.Bind(wx.EVT_MENU, self.on_open_samples, id=ID_OPEN_SAMPLES)
-        self.Bind(wx.EVT_MENU, self.on_about_bag_explorer, id=wx.ID_ABOUT)
+        self.Bind(wx.EVT_MENU, self.on_about_bagexplorer, id=wx.ID_ABOUT)
         self.Bind(wx.EVT_MENU, self.on_about_hdf_compass, id=ID_ABOUT_HDF_COMPASS)
         self.Bind(wx.EVT_MENU, self.on_manual_bag_tools, id=ID_MANUAL_BAG_TOOLS)
         self.Bind(wx.EVT_MENU, self.on_about_bag_tools, id=ID_ABOUT_BAG_TOOLS)
@@ -129,7 +129,7 @@ class InitFrame(frame.InitFrame):
         import webbrowser
         webbrowser.open('http://giumas.github.io/hyo_bag/stable/index.html')
 
-    def on_about_bag_explorer(self, evt):
+    def on_about_bagexplorer(self, evt):
         """ Display an "About BAG Explorer" dialog """
         from . import __version__
 

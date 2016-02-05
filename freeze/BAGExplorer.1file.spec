@@ -1,12 +1,12 @@
-# Builds a single-folder EXE for distribution.
+# Builds a single-file EXE for distribution.
 # Note that an "unbundled" distribution launches much more quickly, but
 # requires an installer program to distribute.
 #
 # To compile, execute the following within the source directory:
 #
-# python /path/to/pyinstaller.py BAGExplorer.1folder.spec
+# python /path/to/pyinstaller.py freeze/BAGExplorer.1file.spec
 #
-# The resulting .exe file is placed in the dist/BAGExplorer folder.
+# The resulting .exe file is placed in the dist/ folder.
 
 from PyInstaller.building.build_main import Analysis, PYZ, EXE, COLLECT, BUNDLE, TOC
 from PyInstaller import is_darwin
@@ -14,6 +14,7 @@ import os
 
 
 def collect_pkg_data(package, include_py_files=False, subdir=None):
+    """ helper function to collect data based on the passed package """
     from PyInstaller.utils.hooks import get_package_paths, remove_prefix, PY_IGNORE_EXTENSIONS
 
     # Accept only strings as packages.
@@ -37,49 +38,47 @@ def collect_pkg_data(package, include_py_files=False, subdir=None):
     return data_toc
 
 pkg_data_bag = collect_pkg_data('hydroffice.bag')
-pkg_data_bag_explorer = collect_pkg_data('hydroffice.bag_explorer')
+pkg_data_bagexplorer = collect_pkg_data('hydroffice.bagexplorer')
 pkg_data_hdf_compass = collect_pkg_data('hdf_compass')
 pkg_data_lxml = collect_pkg_data('lxml')
 cartopy_aux = collect_pkg_data('cartopy')
 
-icon_folder = os.path.abspath(os.path.join('hydroffice', 'bag_explorer', 'media'))
+icon_folder = os.path.abspath(os.path.join('hydroffice', 'bagexplorer', 'media'))
 if not os.path.exists(icon_folder):
     raise RuntimeError("invalid path to icon folder: %s" % icon_folder)
 icon_file = os.path.join(icon_folder, 'BAGExplorer.ico')
 if is_darwin:
     icon_file = os.path.join(icon_folder, 'BAGExplorer.icns')
 
+version = '0.2.3.dev1'
+app_name = 'BAGExplorer'  # + version
+    
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
-             hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack'],  # for cartopy
-             excludes=["PySide", "scipy", "PyQt4", "pandas", "IPython"],
+             hiddenimports=['scipy.integrate'],
+             excludes=["PySide", "PyQt4", "pandas", "IPython"],
              hookspath=None,
              runtime_hooks=None)
 
 pyz = PYZ(a.pure)
 exe = EXE(pyz,
           a.scripts,
-          exclude_binaries=True,
-          name='BAGExplorer',
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          pkg_data_bag,
+          pkg_data_bagexplorer,
+          pkg_data_hdf_compass,
+          pkg_data_lxml,
+          cartopy_aux,
+          name=app_name,
           debug=False,
           strip=None,
-          upx=True,
+          upx=False,
           console=True,
           icon=icon_file)
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               pkg_data_bag,
-               pkg_data_bag_explorer,
-               pkg_data_hdf_compass,
-               pkg_data_lxml,
-               cartopy_aux,
-               strip=None,
-               upx=True,
-               name='BAGExplorer')
 if is_darwin:
-    app = BUNDLE(coll,
+    app = BUNDLE(exe,
                  name='BAGExplorer.app',
                  icon=icon_file,
                  bundle_identifier=None)

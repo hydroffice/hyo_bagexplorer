@@ -9,6 +9,6 @@ ch.setFormatter(ch_formatter)
 logger.addHandler(ch)
 
 
-from hydroffice.bag_explorer import explorer
+from hydroffice.bagexplorer import explorer
 
 explorer.run()

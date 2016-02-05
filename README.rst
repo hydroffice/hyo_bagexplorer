@@ -5,7 +5,7 @@ HydrOffice BAG Explorer
 General info
 ------------
 
-.. image:: https://bitbucket.org/ccomjhc/hyo_bag_explorer/raw/tip/hydroffice/bag_explorer/media/BAGExplorer_128.png
+.. image:: https://bitbucket.org/ccomjhc/hyo_bagexplorer/raw/tip/hydroffice/bagexplorer/media/BAGExplorer_128.png
     :alt: logo
 
 HydrOffice is a research development environment for ocean mapping. It provides a collection of hydro-packages, each of them dealing with a specific issue of the field.
@@ -48,6 +48,6 @@ Creation of MAC OS dmg
 Other info
 ----------
 
-* Bitbucket: `https://bitbucket.org/ccomjhc/hyo_bag_explorer <https://bitbucket.org/ccomjhc/hyo_bag_explorer>`_
+* Bitbucket: `https://bitbucket.org/ccomjhc/hyo_bagexplorer <https://bitbucket.org/ccomjhc/hyo_bagexplorer>`_
 * Project page: `http://ccom.unh.edu/project/hydroffice <http://ccom.unh.edu/project/hydroffice>`_
-* License: BSD-like license (See `COPYING <https://bitbucket.org/ccomjhc/hyo_bag_explorer/raw/tip/COPYING.txt>`_)
+* License: BSD-like license (See `COPYING <https://bitbucket.org/ccomjhc/hyo_bagexplorer/raw/tip/COPYING.txt>`_)

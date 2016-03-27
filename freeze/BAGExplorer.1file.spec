@@ -50,13 +50,16 @@ icon_file = os.path.join(icon_folder, 'BAGExplorer.ico')
 if is_darwin:
     icon_file = os.path.join(icon_folder, 'BAGExplorer.icns')
 
-version = '0.2.3.dev1'
-app_name = 'BAGExplorer'  # + version
+app_name = 'BAGExplorer'
     
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
              hiddenimports=['scipy.integrate'],
              excludes=["PySide", "PyQt4", "pandas", "IPython"],
+             binaries=[
+                 ('C:/Users/gmasetti/AppData/Local/HyO/py2/x86/pkgs/mkl-11.3.1-0/Library/bin/mkl_p4.dll', ''),
+                 ('C:/Users/gmasetti/AppData/Local/HyO/py2/x86/pkgs/mkl-11.3.1-0/Library/bin/mkl_avx2.dll', ''),
+             ],
              hookspath=None,
              runtime_hooks=None)
 

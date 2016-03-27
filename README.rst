@@ -49,5 +49,5 @@ Other info
 ----------
 
 * Bitbucket: `https://bitbucket.org/ccomjhc/hyo_bagexplorer <https://bitbucket.org/ccomjhc/hyo_bagexplorer>`_
-* Project page: `http://ccom.unh.edu/project/hydroffice <http://ccom.unh.edu/project/hydroffice>`_
-* License: BSD-like license (See `COPYING <https://bitbucket.org/ccomjhc/hyo_bagexplorer/raw/tip/COPYING.txt>`_)
+* Project page: `http://www.hydroffice.org <http://www.hydroffice.org>`_
+* License: LGPLv3 license (See `LICENSE <https://bitbucket.org/ccomjhc/hyo_bag/raw/tip/LICENSE>`_)

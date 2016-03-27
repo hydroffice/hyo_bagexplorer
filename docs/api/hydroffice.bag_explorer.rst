@@ -1,4 +1,4 @@
-hydroffice.bag_explorer package
+hydroffice.bagexplorer package
 ===============================
 
 Subpackages
@@ -6,23 +6,23 @@ Subpackages
 
 .. toctree::
 
-    hydroffice.bag_explorer.gui
+    hydroffice.bagexplorer.gui
 
 Submodules
 ----------
 
-hydroffice.bag_explorer.explorer module
+hydroffice.bagexplorer.explorer module
 ---------------------------------------
 
-.. automodule:: hydroffice.bag_explorer.explorer
+.. automodule:: hydroffice.bagexplorer.explorer
     :members:
     :undoc-members:
     :show-inheritance:
 
-hydroffice.bag_explorer.frame module
+hydroffice.bagexplorer.frame module
 ------------------------------------
 
-.. automodule:: hydroffice.bag_explorer.frame
+.. automodule:: hydroffice.bagexplorer.frame
     :members:
     :undoc-members:
     :show-inheritance:
@@ -31,7 +31,7 @@ hydroffice.bag_explorer.frame module
 Module contents
 ---------------
 
-.. automodule:: hydroffice.bag_explorer
+.. automodule:: hydroffice.bagexplorer
     :members:
     :undoc-members:
     :show-inheritance:

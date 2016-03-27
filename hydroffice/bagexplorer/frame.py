@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import os
-
+from datetime import date
 import wx
 
 import logging
@@ -100,7 +100,7 @@ class InitFrame(frame.InitFrame):
         self.GetMenuBar().Insert(1, fm, "BAG &Tools")
 
         self.Bind(wx.EVT_MENU, self.on_open_samples, id=ID_OPEN_SAMPLES)
-        self.Bind(wx.EVT_MENU, self.on_about_bag_explorer, id=wx.ID_ABOUT)
+        self.Bind(wx.EVT_MENU, self.on_about_bagexplorer, id=wx.ID_ABOUT)
         self.Bind(wx.EVT_MENU, self.on_about_hdf_compass, id=ID_ABOUT_HDF_COMPASS)
         self.Bind(wx.EVT_MENU, self.on_manual_bag_tools, id=ID_MANUAL_BAG_TOOLS)
         self.Bind(wx.EVT_MENU, self.on_about_bag_tools, id=ID_ABOUT_BAG_TOOLS)
@@ -129,7 +129,7 @@ class InitFrame(frame.InitFrame):
         import webbrowser
         webbrowser.open('http://giumas.github.io/hyo_bag/stable/index.html')
 
-    def on_about_bag_explorer(self, evt):
+    def on_about_bagexplorer(self, evt):
         """ Display an "About BAG Explorer" dialog """
         from . import __version__
 
@@ -144,44 +144,22 @@ Joint Hydrographic Center (CCOM/JHC).
 """
         info.Version = __version__
         info.License = """
-Copyright (c) 2015, University of New Hampshire
-All rights reserved.
+Copyright Notice and License Terms for: hydroffice.bagexplorer - BAG Explorer for HydrOffice
+Copyright (c) %s, University of New Hampshire, Center for Coastal and Ocean Mapping
 
-Redistribution and use in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met:
+Released under a dual license:
+- Community license (LGPLv3)
+- Industrial Associate license
 
-1. Redistributions of source code must retain the above copyright notice, this list
-of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice, this
-list of conditions and the following disclaimer in the documentation and/or other
-materials provided with the distribution.
-
-3. Neither the name of the copyright holder nor the names of its contributors may
-be used to endorse or promote products derived from this software without specific
-prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-        """
-        info.Copyright = "(c) 2015 University of New Hampshire"
+For more info, visit: http://www.hydroffice.org/license/
+        """ % date.today().year
+        info.Copyright = "(c) %s University of New Hampshire" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAGExplorer_128.png')))
         info.SetWebSite("http://ccom.unh.edu/hydroffice")
         wx.AboutBox(info)
 
     def on_about_hdf_compass(self, evt):
         """ Display an "About HDF_Compass" dialog """
-        from datetime import date
         from hdf_compass.utils import __version__
 
         info = wx.AboutDialogInfo()
@@ -197,7 +175,7 @@ POSSIBILITY OF SUCH DAMAGE.
         info = wx.AboutDialogInfo()
         info.Name = "HydrOffice BAG Tools"
         info.Version = bag_version
-        info.Copyright = "(c) 2015 G.Masetti, B.R.Calder"
+        info.Copyright = "(c) %s G.Masetti, B.R.Calder" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAG_48.png')))
         info.SetWebSite("https://bitbucket.org/gmasetti/hyo_bag")
         wx.AboutBox(info)

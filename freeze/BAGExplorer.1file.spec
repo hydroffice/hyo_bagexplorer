@@ -4,7 +4,7 @@
 #
 # To compile, execute the following within the source directory:
 #
-# python /path/to/pyinstaller.py BAGExplorer.1file.spec
+# python /path/to/pyinstaller.py freeze/BAGExplorer.1file.spec
 #
 # The resulting .exe file is placed in the dist/ folder.
 
@@ -38,25 +38,28 @@ def collect_pkg_data(package, include_py_files=False, subdir=None):
     return data_toc
 
 pkg_data_bag = collect_pkg_data('hydroffice.bag')
-pkg_data_bag_explorer = collect_pkg_data('hydroffice.bag_explorer')
+pkg_data_bagexplorer = collect_pkg_data('hydroffice.bagexplorer')
 pkg_data_hdf_compass = collect_pkg_data('hdf_compass')
 pkg_data_lxml = collect_pkg_data('lxml')
 cartopy_aux = collect_pkg_data('cartopy')
 
-icon_folder = os.path.abspath(os.path.join('hydroffice', 'bag_explorer', 'media'))
+icon_folder = os.path.abspath(os.path.join('hydroffice', 'bagexplorer', 'media'))
 if not os.path.exists(icon_folder):
     raise RuntimeError("invalid path to icon folder: %s" % icon_folder)
 icon_file = os.path.join(icon_folder, 'BAGExplorer.ico')
 if is_darwin:
     icon_file = os.path.join(icon_folder, 'BAGExplorer.icns')
 
-version = '0.2.3.dev1'
-app_name = 'BAGExplorer'  # + version
+app_name = 'BAGExplorer'
     
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
-             hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack'],  # for cartopy
-             excludes=["PySide", "scipy", "PyQt4", "pandas", "IPython"],
+             hiddenimports=['scipy.integrate'],
+             excludes=["PySide", "PyQt4", "pandas", "IPython"],
+             binaries=[
+                 ('C:/Users/gmasetti/AppData/Local/HyO/py2/x86/pkgs/mkl-11.3.1-0/Library/bin/mkl_p4.dll', ''),
+                 ('C:/Users/gmasetti/AppData/Local/HyO/py2/x86/pkgs/mkl-11.3.1-0/Library/bin/mkl_avx2.dll', ''),
+             ],
              hookspath=None,
              runtime_hooks=None)
 
@@ -67,7 +70,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           pkg_data_bag,
-          pkg_data_bag_explorer,
+          pkg_data_bagexplorer,
           pkg_data_hdf_compass,
           pkg_data_lxml,
           cartopy_aux,

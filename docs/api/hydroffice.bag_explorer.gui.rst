@@ -1,13 +1,13 @@
-hydroffice.bag_explorer.gui package
+hydroffice.bagexplorer.gui package
 ===================================
 
 Submodules
 ----------
 
-hydroffice.bag_explorer.gui.mainwin module
+hydroffice.bagexplorer.gui.mainwin module
 ------------------------------------------
 
-.. automodule:: hydroffice.bag_explorer.gui.mainwin
+.. automodule:: hydroffice.bagexplorer.gui.mainwin
     :members:
     :undoc-members:
     :show-inheritance:
@@ -16,7 +16,7 @@ hydroffice.bag_explorer.gui.mainwin module
 Module contents
 ---------------
 
-.. automodule:: hydroffice.bag_explorer.gui
+.. automodule:: hydroffice.bagexplorer.gui
     :members:
     :undoc-members:
     :show-inheritance:

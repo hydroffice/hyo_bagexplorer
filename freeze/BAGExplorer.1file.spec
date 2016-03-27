@@ -56,10 +56,6 @@ a = Analysis(['BAGExplorer.py'],
              pathex=[],
              hiddenimports=['scipy.integrate'],
              excludes=["PySide", "PyQt4", "pandas", "IPython"],
-             binaries=[
-                 ('C:/Users/gmasetti/AppData/Local/HyO/py2/x86/pkgs/mkl-11.3.1-0/Library/bin/mkl_p4.dll', ''),
-                 ('C:/Users/gmasetti/AppData/Local/HyO/py2/x86/pkgs/mkl-11.3.1-0/Library/bin/mkl_avx2.dll', ''),
-             ],
              hookspath=None,
              runtime_hooks=None)
 

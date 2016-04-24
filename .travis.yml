@@ -11,7 +11,7 @@ os:
 
 env:
   - PYTHON_VERSION=2.7
-  - PYTHON_VERSION=3.4
+  # - PYTHON_VERSION=3.4
 
 matrix:
   allow_failures:
@@ -69,8 +69,8 @@ after_script:
       python setup.py bdist_wheel;
     fi
 
-addons:
-  artifacts:
-    debug: true
-    paths:
-    - ./dist
+#addons:
+#  artifacts:
+#    debug: true
+#    paths:
+#    - ./dist

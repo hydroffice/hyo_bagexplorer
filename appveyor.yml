@@ -52,7 +52,7 @@ after_test:
     # If tests are successful, create a whl package for the project.
     - python setup.py bdist_wheel
     # Freeze the application using PyInstaller
-    - pyinstaller freeze/BAGExplorer.1file.spec
+    # - pyinstaller freeze/BAGExplorer.1file.spec
     # Show the content of the `dist` folder
     - ps: ls dist
 

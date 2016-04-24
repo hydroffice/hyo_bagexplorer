@@ -16,6 +16,10 @@ General info
     :target: https://ci.appveyor.com/project/giumas/hyo-bagexplorer
     :alt: AppVeyor Status
 
+.. image:: https://travis-ci.org/hydroffice/hyo_bagexplorer.svg?branch=master
+    :target: https://travis-ci.org/hydroffice/hyo_bagexplorer
+    :alt: Travis-CI Status
+
 HydrOffice is a research development environment for ocean mapping. It provides a collection of hydro-packages, each of them dealing with a specific issue of the field.
 The main goal is to speed up both algorithms testing and research-2-operation.
 

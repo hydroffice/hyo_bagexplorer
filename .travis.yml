@@ -57,8 +57,10 @@ install:
   - pip install --no-deps hdf_compass
   - pip install --no-deps -e .
 
-script:
-  - python setup.py test
+test: off
+
+#test_script:
+#  - python setup.py test
 
 after_script:
   # If tests are successful, create a source distribution.

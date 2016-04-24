@@ -45,8 +45,10 @@ install:
 build_script:
   - python setup.py build
 
-test_script:
-  - python setup.py test
+test: off
+
+#test_script:
+#  - python setup.py test
 
 after_test:
     # If tests are successful, create a whl package for the project.

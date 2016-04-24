@@ -5,8 +5,16 @@ HydrOffice BAG Explorer
 General info
 ------------
 
-.. image:: https://bitbucket.org/ccomjhc/hyo_bagexplorer/raw/tip/hydroffice/bagexplorer/media/BAGExplorer_128.png
+.. image:: https://www.hydroffice.org/static/mybag/img/logo.png
     :alt: logo
+
+.. image:: https://ci.appveyor.com/api/projects/status/0pd1horwjasgjvkw?svg=true
+    :target: https://ci.appveyor.com/project/giumas/hyo-bagexplorer
+    :alt: PyPi version
+
+.. image:: https://ci.appveyor.com/api/projects/status/tfg350xo8t7h70ix?svg=true
+    :target: https://ci.appveyor.com/project/giumas/hdf-compass
+    :alt: AppVeyor Status
 
 HydrOffice is a research development environment for ocean mapping. It provides a collection of hydro-packages, each of them dealing with a specific issue of the field.
 The main goal is to speed up both algorithms testing and research-2-operation.
@@ -36,18 +44,18 @@ Freezing
 Use of Pyinstaller
 ~~~~~~~~~~~~~~~~~~
 
-* ``pyinstaller --clean -y BAGExplorer.1file.spec``
-* ``pyinstaller --clean -y BAGExplorer.1folder.spec``
+* ``pyinstaller --clean -y freeze/BAGExplorer.1file.spec``
+* ``pyinstaller --clean -y freeze/BAGExplorer.1folder.spec``
 
 Creation of MAC OS dmg
 ~~~~~~~~~~~~~~~~~~~~~~
 
-* ``appdmg spec.json BAGExplorer.dmg``
+* ``appdmg spec.json dist/BAGExplorer.dmg``
 
 
 Other info
 ----------
 
-* Bitbucket: `https://bitbucket.org/ccomjhc/hyo_bagexplorer <https://bitbucket.org/ccomjhc/hyo_bagexplorer>`_
-* Project page: `http://www.hydroffice.org <http://www.hydroffice.org>`_
-* License: LGPLv3 license (See `LICENSE <https://bitbucket.org/ccomjhc/hyo_bag/raw/tip/LICENSE>`_)
+* Bitbucket: `repo <https://bitbucket.org/ccomjhc/hyo_bagexplorer <https://bitbucket.org/ccomjhc/hyo_bagexplorer>`_
+* Project page: `https://www.hydroffice.org/bag/main>`_
+* License: LGPLv3 license (See `LICENSE <https://www.hydroffice.org/license/>`_)

@@ -59,8 +59,8 @@ install:
 
 test: off
 
-#test_script:
-#  - python setup.py test
+test_script:
+  - python -m unittest  # placeholder
 
 after_script:
   # If tests are successful, create a source distribution.

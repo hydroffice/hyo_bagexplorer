@@ -45,10 +45,8 @@ install:
 build_script:
   - python setup.py build
 
-test: off
-
-#test_script:
-#  - python setup.py test
+test_script:
+  - python -m unittest  # placeholder
 
 after_test:
     # If tests are successful, create a whl package for the project.

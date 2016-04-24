@@ -42,12 +42,7 @@ build_script:
   - "python setup.py build"
 
 test_script:
-  - "python -m unittest hdf_compass.array_model.test"
-  - "python -m unittest hdf_compass.asc_model.test"
-  - "python -m unittest hdf_compass.bag_model.test"
-  - "python -m unittest hdf_compass.filesystem_model.test"
-  - "python -m unittest hdf_compass.hdf5_model.test"
-  - "python -m unittest hdf_compass.opendap_model.test"
+  - python setup.py test
 
 after_test:
     # If tests are successful, create a whl package for the project.

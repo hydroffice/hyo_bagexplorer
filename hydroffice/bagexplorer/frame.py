@@ -151,11 +151,11 @@ Released under a dual license:
 - Community license (LGPLv3)
 - Industrial Associate license
 
-For more info, visit: http://www.hydroffice.org/license/
+For more info, visit: https://www.hydroffice.org/license/
         """ % date.today().year
         info.Copyright = "(c) %s University of New Hampshire" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAGExplorer_128.png')))
-        info.SetWebSite("http://ccom.unh.edu/hydroffice")
+        info.SetWebSite("https://www.hydroffice.org/bag/main")
         wx.AboutBox(info)
 
     def on_about_hdf_compass(self, evt):
@@ -177,7 +177,7 @@ For more info, visit: http://www.hydroffice.org/license/
         info.Version = bag_version
         info.Copyright = "(c) %s G.Masetti, B.R.Calder" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAG_48.png')))
-        info.SetWebSite("https://bitbucket.org/gmasetti/hyo_bag")
+        info.SetWebSite("https://github.com/hydroffice/hyo_bag")
         wx.AboutBox(info)
 
     def on_file_open(self, evt):

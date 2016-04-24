@@ -31,8 +31,8 @@ install:
   - "python --version"
 
   # Install dependencies
-  - "conda install -q h5py lxml numpy matplotlib pydap wxpython requests shapely proj4 geos cartopy"
-  - "pip install --no-dependencies hydroffice.bag hdf_compass setuptools==19.2"
+  - "conda install -q h5py lxml numpy matplotlib pydap wxpython requests shapely proj4 geos cartopy setuptools=19.2"
+  - "pip install --no-dependencies hydroffice.bag hdf_compass"
   - "pip install pyinstaller"
 
   # Add to path the current folder

@@ -39,8 +39,12 @@ def collect_pkg_data(package, include_py_files=False, subdir=None):
 pkg_data_bag = collect_pkg_data('hydroffice.bag')
 pkg_data_bagexplorer = collect_pkg_data('hydroffice.bagexplorer')
 pkg_data_hdf_compass = collect_pkg_data('hdf_compass')
-pkg_data_lxml = collect_pkg_data('lxml')
-cartopy_aux = collect_pkg_data('cartopy')
+cartopy_aux = []
+try:  # for GeoArray we use cartopy that can be challenging to freeze on OSX to dependencies (i.e. geos)
+    import cartopy.crs as ccrs
+    cartopy_aux = collect_pkg_data('cartopy')
+except (ImportError, OSError):
+    pass
 
 icon_folder = os.path.abspath(os.path.join('hydroffice', 'bagexplorer', 'media'))
 if not os.path.exists(icon_folder):
@@ -51,7 +55,8 @@ if is_darwin:
 
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
-             hiddenimports=['scipy.integrate'],
+             hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack',
+                            'scipy.linalg', 'scipy.integrate'],  # for cartopy
              excludes=["PySide", "PyQt4", "pandas", "IPython"],
              hookspath=None,
              runtime_hooks=None)
@@ -73,7 +78,6 @@ coll = COLLECT(exe,
                pkg_data_bag,
                pkg_data_bagexplorer,
                pkg_data_hdf_compass,
-               pkg_data_lxml,
                cartopy_aux,
                strip=None,
                upx=True,

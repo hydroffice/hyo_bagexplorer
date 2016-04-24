@@ -8,12 +8,12 @@ General info
 .. image:: https://www.hydroffice.org/static/mybag/img/logo.png
     :alt: logo
 
+.. image:: https://img.shields.io/pypi/v/hydroffice.bagexplorer.svg
+    :target: https://badge.fury.io/py/hydroffice.bagexplorer
+    :alt: PyPI Status
+
 .. image:: https://ci.appveyor.com/api/projects/status/0pd1horwjasgjvkw?svg=true
     :target: https://ci.appveyor.com/project/giumas/hyo-bagexplorer
-    :alt: PyPi version
-
-.. image:: https://ci.appveyor.com/api/projects/status/tfg350xo8t7h70ix?svg=true
-    :target: https://ci.appveyor.com/project/giumas/hdf-compass
     :alt: AppVeyor Status
 
 HydrOffice is a research development environment for ocean mapping. It provides a collection of hydro-packages, each of them dealing with a specific issue of the field.
@@ -57,5 +57,5 @@ Other info
 ----------
 
 * Bitbucket: `repo <https://bitbucket.org/ccomjhc/hyo_bagexplorer <https://bitbucket.org/ccomjhc/hyo_bagexplorer>`_
-* Project page: `https://www.hydroffice.org/bag/main>`_
+* Project page: `url <https://www.hydroffice.org/bag/main>`_
 * License: LGPLv3 license (See `LICENSE <https://www.hydroffice.org/license/>`_)

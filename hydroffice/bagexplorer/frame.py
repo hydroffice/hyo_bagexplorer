@@ -75,28 +75,28 @@ class InitFrame(frame.InitFrame):
         bm.Append(ID_TOOLS_BBOX_GML, "Export as GML", "Export bounding box and metadata as GML")
         bm.Append(ID_TOOLS_BBOX_KML, "Export as KML", "Export bounding box and metadata as KML")
         bm.Append(ID_TOOLS_BBOX_SHP, "Export as Shapefile", "Export bounding box and metadata as Shapefile")
-        fm.AppendMenu(wx.ID_ANY, "Bounding Box", bm)
+        fm.Append(wx.ID_ANY, "Bounding Box", bm)
         # Elevation
         em = wx.Menu()
         em.Append(ID_TOOLS_ELV_ASC, "Export as ASCII Grid", "Export Elevation layer as ASCII Grid")
         em.Append(ID_TOOLS_ELV_GTF, "Export as GeoTiff", "Export Elevation layer as ASCII Grid")
         em.Append(ID_TOOLS_ELV_XYZ, "Export as XYZ", "Export Elevation layer as XYZ")
-        fm.AppendMenu(wx.ID_ANY, "Elevation", em)
+        fm.Append(wx.ID_ANY, "Elevation", em)
         # Uncertainty
         um = wx.Menu()
         um.Append(ID_TOOLS_UNC_ASC, "Export as ASCII Grid", "Export Uncertainty layer as ASCII Grid")
         um.Append(ID_TOOLS_UNC_GTF, "Export as GeoTiff", "Export Uncertainty layer as ASCII Grid")
         um.Append(ID_TOOLS_UNC_XYZ, "Export as XYZ", "Export Uncertainty layer as XYZ")
-        fm.AppendMenu(wx.ID_ANY, "Uncertainty", um)
+        fm.Append(wx.ID_ANY, "Uncertainty", um)
         # Tracking list
         tm = wx.Menu()
         tm.Append(ID_TOOLS_TKL_CSV, "Export as CSV", "Export Tracking List as Comma Separated Values")
-        fm.AppendMenu(wx.ID_ANY, "Tracking List", tm)
+        fm.Append(wx.ID_ANY, "Tracking List", tm)
         # Metadata
         mm = wx.Menu()
         mm.Append(ID_TOOLS_META_VAL, "Validate", "Validate BAG Metadata")
         mm.Append(ID_TOOLS_META_XML, "Export as Xml", "Export as XML file")
-        fm.AppendMenu(wx.ID_ANY, "Metadata", mm)
+        fm.Append(wx.ID_ANY, "Metadata", mm)
         self.GetMenuBar().Insert(1, fm, "BAG &Tools")
 
         self.Bind(wx.EVT_MENU, self.on_open_samples, id=ID_OPEN_SAMPLES)
@@ -133,7 +133,7 @@ class InitFrame(frame.InitFrame):
         """ Display an "About BAG Explorer" dialog """
         from . import __version__
 
-        info = wx.AboutDialogInfo()
+        info = wx.adv.AboutDialogInfo()
         info.Name = "BAG Explorer"
         info.Description = """
 An application to browse and interact with Bathymetric Attributed Grid (BAG) files.
@@ -156,7 +156,7 @@ For more info, visit: https://www.hydroffice.org/license/
         info.Copyright = "(c) %s University of New Hampshire" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAGExplorer_128.png')))
         info.SetWebSite("https://www.hydroffice.org/bag/main")
-        wx.AboutBox(info)
+        wx.adv.AboutBox(info)
 
     def on_about_hdf_compass(self, evt):
         """ Display an "About HDF_Compass" dialog """

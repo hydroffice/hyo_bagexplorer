@@ -4,7 +4,7 @@ import unittest
 import os
 import wx
 
-from hydroffice.bagexplorer.explorer import BagExplorerApp
+from hyo.bagexplorer.explorer import BagExplorerApp
 
 
 class TestBagExplorerApp(unittest.TestCase):

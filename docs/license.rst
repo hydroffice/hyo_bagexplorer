@@ -1,7 +1,7 @@
 License
 =======
 
-Copyright Notice and License Terms for: hydroffice.bagexplorer - BAG Explorer for HydrOffice
+Copyright Notice and License Terms for: hyo.bagexplorer - BAG Explorer for HydrOffice
 Copyright (c) 2016, University of New Hampshire, Center for Coastal and Ocean Mapping
 
 Released under a dual license:

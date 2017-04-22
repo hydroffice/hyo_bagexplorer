@@ -36,8 +36,8 @@ def collect_pkg_data(package, include_py_files=False, subdir=None):
 
     return data_toc
 
-pkg_data_bag = collect_pkg_data('hydroffice.bag')
-pkg_data_bagexplorer = collect_pkg_data('hydroffice.bagexplorer')
+pkg_data_bag = collect_pkg_data('hyo.bag')
+pkg_data_bagexplorer = collect_pkg_data('hyo.bagexplorer')
 pkg_data_hdf_compass = collect_pkg_data('hdf_compass')
 cartopy_aux = []
 try:  # for GeoArray we use cartopy that can be challenging to freeze on OSX to dependencies (i.e. geos)

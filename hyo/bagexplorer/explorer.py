@@ -9,7 +9,7 @@ from hdf_compass.compass_viewer.viewer import load_plugins
 from hdf_compass.compass_viewer import open_store, CompassApp
 from hdf_compass import utils
 
-from hydroffice.bagexplorer import frame
+from hyo.bagexplorer import frame
 
 
 class BagExplorerApp(CompassApp):

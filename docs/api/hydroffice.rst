@@ -6,7 +6,7 @@ Subpackages
 
 .. toctree::
 
-    hydroffice.bagexplorer
+    hyo.bagexplorer
 
 Module contents
 ---------------

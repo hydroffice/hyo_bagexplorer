@@ -11,11 +11,11 @@ from hdf_compass import utils
 from hdf_compass.compass_viewer import frame
 from hdf_compass import compass_model
 
-from hydroffice.bag import BAGFile, __version__ as bag_version
-from hydroffice.bag.bbox import Bbox2Gdal
-from hydroffice.bag.elevation import Elevation2Gdal
-from hydroffice.bag.uncertainty import Uncertainty2Gdal
-from hydroffice.bag.tracklist import TrackList2Csv
+from hyo.bag import BAGFile, __version__ as bag_version
+from hyo.bag.bbox import Bbox2Gdal
+from hyo.bag.elevation import Elevation2Gdal
+from hyo.bag.uncertainty import Uncertainty2Gdal
+from hyo.bag.tracklist import TrackList2Csv
 
 ID_ABOUT_BAG_TOOLS = wx.NewId()
 ID_MANUAL_BAG_TOOLS = wx.NewId()
@@ -144,18 +144,18 @@ Joint Hydrographic Center (CCOM/JHC).
 """
         info.Version = __version__
         info.License = """
-Copyright Notice and License Terms for: hydroffice.bagexplorer - BAG Explorer for HydrOffice
+Copyright Notice and License Terms for: hyo.bagexplorer - BAG Explorer for HydrOffice
 Copyright (c) %s, University of New Hampshire, Center for Coastal and Ocean Mapping
 
 Released under a dual license:
 - Community license (LGPLv3)
 - Industrial Associate license
 
-For more info, visit: https://www.hydroffice.org/license/
+For more info, visit: https://www.hyo.org/license/
         """ % date.today().year
         info.Copyright = "(c) %s University of New Hampshire" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAGExplorer_128.png')))
-        info.SetWebSite("https://www.hydroffice.org/bag/main")
+        info.SetWebSite("https://www.hyo.org/bag/main")
         wx.adv.AboutBox(info)
 
     def on_about_hdf_compass(self, evt):
@@ -177,7 +177,7 @@ For more info, visit: https://www.hydroffice.org/license/
         info.Version = bag_version
         info.Copyright = "(c) %s G.Masetti, B.R.Calder" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAG_48.png')))
-        info.SetWebSite("https://github.com/hydroffice/hyo_bag")
+        info.SetWebSite("https://github.com/hyo/hyo_bag")
         wx.AboutBox(info)
 
     def on_file_open(self, evt):

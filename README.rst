@@ -8,8 +8,8 @@ HydrOffice BAG Explorer
 General info
 ------------
 
-.. image:: https://img.shields.io/pypi/v/hydroffice.bagexplorer.svg
-    :target: https://badge.fury.io/py/hydroffice.bagexplorer
+.. image:: https://img.shields.io/pypi/v/hyo.bagexplorer.svg
+    :target: https://badge.fury.io/py/hyo.bagexplorer
     :alt: PyPI Status
 
 .. image:: https://ci.appveyor.com/api/projects/status/0pd1horwjasgjvkw?svg=true

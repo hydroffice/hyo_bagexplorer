@@ -46,13 +46,13 @@ before_install:
 install:
   - conda config --add channels conda-forge
   - conda install -q h5py lxml numpy matplotlib pydap requests shapely proj4 geos cartopy setuptools gdal
-  - pip install --no-deps hydroffice.bag
+  - pip install --no-deps hyo.bag
   - pip install wxPython
   - pip install --no-deps https://github.com/HDFGroup/hdf-compass/archive/py3.zip
   - pip install --no-deps -e .
 
-script:
-  - python -m unittest  # placeholder
+#script:
+#  - python -m unittest  # placeholder
 
 after_script:
   # If tests are successful, create a source distribution.

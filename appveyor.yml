@@ -30,7 +30,7 @@ install:
   # Install dependencies
   - conda install -q h5py lxml numpy matplotlib pydap requests shapely proj4 geos cartopy setuptools gdal
   - pip install wxPython
-  - pip install --no-dependencies hydroffice.bag hdf_compass
+  - pip install --no-dependencies hyo.bag hdf_compass
   - pip install pyinstaller
 
   # Add to path the current folder
@@ -40,6 +40,7 @@ build_script:
   - python setup.py build
 
 test_script:
+  - pip install --no-deps -e .
   - python -m unittest  # placeholder
 
 after_test:

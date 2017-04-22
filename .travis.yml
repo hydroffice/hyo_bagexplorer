@@ -49,10 +49,10 @@ install:
   - pip install --no-deps hyo.bag
   - pip install wxPython
   - pip install --no-deps https://github.com/HDFGroup/hdf-compass/archive/py3.zip
-  - pip install --no-deps -e .
 
-#script:
-#  - python -m unittest  # placeholder
+script:
+  - pip install --no-deps -e .
+  #  - python -m unittest  # placeholder
 
 after_script:
   # If tests are successful, create a source distribution.

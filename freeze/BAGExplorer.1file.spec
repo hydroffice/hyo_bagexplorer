@@ -47,7 +47,7 @@ try:  # for GeoArray we use cartopy that can be challenging to freeze on OSX to 
 except (ImportError, OSError):
     pass
 
-icon_folder = os.path.abspath(os.path.join('hydroffice', 'bagexplorer', 'media'))
+icon_folder = os.path.abspath(os.path.join('hyo', 'bagexplorer', 'media'))
 if not os.path.exists(icon_folder):
     raise RuntimeError("invalid path to icon folder: %s" % icon_folder)
 icon_file = os.path.join(icon_folder, 'BAGExplorer.ico')

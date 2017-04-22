@@ -40,7 +40,7 @@ build_script:
   - python setup.py build
 
 test_script:
-  - pip install --no-deps -e .
+  - pip install --no-dependencies -e .
   - python -m unittest  # placeholder
 
 after_test:

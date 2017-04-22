@@ -1,15 +1,15 @@
 HydrOffice BAG Explorer
 =======================
 
+.. image:: https://www.hydroffice.org/static/mybag/img/logo.png
+    :alt: logo
+
 
 General info
 ------------
 
-.. image:: https://www.hydroffice.org/static/mybag/img/logo.png
-    :alt: logo
-
-.. image:: https://img.shields.io/pypi/v/hyo.bagexplorer.svg
-    :target: https://badge.fury.io/py/hyo.bagexplorer
+.. image:: https://img.shields.io/pypi/v/hydroffice.bagexplorer.svg
+    :target: https://badge.fury.io/py/hydroffice.bagexplorer
     :alt: PyPI Status
 
 .. image:: https://ci.appveyor.com/api/projects/status/0pd1horwjasgjvkw?svg=true
@@ -37,7 +37,7 @@ Dependencies
 For executing and packaging the *BAG Explorer* app:
 
 * ``hdf_compass`` (that requires several dependencies as ``matplotlib``, ``wxPython``, ``h5py``)
-* ``hyo.bag`` (that also requires ``lxml`` and ``osgeo.gdal``)
+* ``hydroffice.bag`` (that also requires ``lxml`` and ``osgeo.gdal``)
 * ``PyInstaller`` *[for freezing the application]*
 * ``appdmg`` *[for creating a dmg on Mac]*
 

@@ -14,7 +14,7 @@ env:
 
 matrix:
   allow_failures:
-  - os: osx
+  - os: linux  # because of wx Phoenix
 
 before_install:
   # Set the anaconda environment
@@ -46,8 +46,8 @@ before_install:
 install:
   - conda config --add channels conda-forge
   - conda install -q h5py lxml numpy matplotlib pydap wxpython requests shapely proj4 geos cartopy setuptools gdal
-  - pip install --no-deps hyo.bag
-  - pip install --no-deps hdf_compass
+  - pip install --no-deps hydroffice.bag
+  - pip install --no-deps https://github.com/HDFGroup/hdf-compass/archive/py3.zip
   - pip install --no-deps -e .
 
 script:

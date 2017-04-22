@@ -28,7 +28,7 @@ install:
   - "python --version"
 
   # Install dependencies
-  - conda install -q h5py lxml numpy matplotlib pydap wxpython requests shapely proj4 geos cartopy setuptools gdal
+  - conda install -q h5py lxml numpy matplotlib pydap requests shapely proj4 geos cartopy setuptools gdal
   - pip install wxPython
   - pip install --no-dependencies hydroffice.bag hdf_compass
   - pip install pyinstaller

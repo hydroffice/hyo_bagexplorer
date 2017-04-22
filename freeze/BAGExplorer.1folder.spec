@@ -57,7 +57,8 @@ a = Analysis(['BAGExplorer.py'],
              pathex=[],
              hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack',
                             'scipy.linalg', 'scipy.integrate'],  # for cartopy
-             excludes=["PySide", "PyQt4", "pandas", "IPython"],
+             excludes=["PySide", "PyQt4", "pandas", "IPython",
+                       "FixTk", "tcl", "tk", "_tkinter", "tkinter", "Tkinter"],
              hookspath=None,
              runtime_hooks=None)
 

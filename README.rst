@@ -60,6 +60,6 @@ Creation of MAC OS dmg
 Other info
 ----------
 
-* Bitbucket: `repo <https://bitbucket.org/ccomjhc/hyo_bagexplorer <https://bitbucket.org/ccomjhc/hyo_bagexplorer>`_
+* Bitbucket: `repo <https://github.com/hydroffice/hyo_bagexplorer <https://github.com/hydroffice/hyo_bagexplorer>`_
 * Project page: `url <https://www.hydroffice.org/bag/main>`_
 * License: LGPLv3 license (See `LICENSE <https://www.hydroffice.org/license/>`_)

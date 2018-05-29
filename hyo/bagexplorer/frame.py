@@ -1,11 +1,10 @@
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import os
 from datetime import date
 import wx
+import wx.adv
 
 import logging
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 from hdf_compass import utils
 from hdf_compass.compass_viewer import frame
@@ -53,19 +52,19 @@ class InitFrame(frame.InitFrame):
         self.SetTitle("BAG Explorer")
 
         for m in self.GetMenuBar().GetMenus():
-            if m[1] == '&File':
+            if 'File' in m[1]:
                 m[0].Insert(2, ID_OPEN_SAMPLES, "Open &Samples\tCtrl-S", "Open data samples")
-            if m[1] == '&Help':
+            if 'Help' in m[1]:
                 about_id = m[0].FindItem("&About HDFCompass")
                 about_item = m[0].FindItemById(about_id)
                 about_item.SetText("About BAG Explorer")
-                m[0].RemoveItem(about_item)
+                m[0].Remove(about_item)
                 m[0].Append(ID_ABOUT_HDF_COMPASS, "&About HDF Compass", "Information about HDF Compass")
                 m[0].AppendSeparator()
                 m[0].Append(ID_MANUAL_BAG_TOOLS, "Online Manual", "Open the online documentation for BAG Tools")
                 m[0].Append(ID_ABOUT_BAG_TOOLS, "&About BAG Tools", "Information about the BAG Tools")
                 m[0].AppendSeparator()
-                m[0].AppendItem(about_item)
+                m[0].Append(about_item)
 
         # Tools menu
         fm = wx.Menu()
@@ -162,23 +161,23 @@ For more info, visit: https://www.hyo.org/license/
         """ Display an "About HDF_Compass" dialog """
         from hdf_compass.utils import __version__
 
-        info = wx.AboutDialogInfo()
+        info = wx.adv.AboutDialogInfo()
         info.Name = "HDF Compass"
         info.Version = __version__
         info.Copyright = "(c) 2014-%d The HDF Group" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, "favicon_48.png")))
         info.SetWebSite("https://www.hdfgroup.org/projects/compass/")
-        wx.AboutBox(info)
+        wx.adv.AboutBox(info)
 
     def on_about_bag_tools(self, evt):
         """ Display an "About BAG Tools" dialog """
-        info = wx.AboutDialogInfo()
+        info = wx.adv.AboutDialogInfo()
         info.Name = "HydrOffice BAG Tools"
         info.Version = bag_version
         info.Copyright = "(c) %s G.Masetti, B.R.Calder" % date.today().year
         info.SetIcon(wx.Icon(os.path.join(self.icon_folder, 'BAG_48.png')))
         info.SetWebSite("https://github.com/hyo/hyo_bag")
-        wx.AboutBox(info)
+        wx.adv.AboutBox(info)
 
     def on_file_open(self, evt):
         """ Request to open a file via the Open entry in the File menu """
@@ -241,9 +240,9 @@ For more info, visit: https://www.hyo.org/license/
 
         samples_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "bag", "samples"))
         if os.path.exists(samples_dir):
-            log.debug("samples folder: %s" % samples_dir)
+            logger.debug("samples folder: %s" % samples_dir)
         else:
-            log.warning("missing samples folder: %s" % samples_dir)
+            logger.warning("missing samples folder: %s" % samples_dir)
         dlg = wx.FileDialog(self, "Open Samples Folder", defaultDir=samples_dir, wildcard=wc_string,
                             style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
         if dlg.ShowModal() != wx.ID_OK:
@@ -462,19 +461,19 @@ For more info, visit: https://www.hyo.org/license/
         if dlg.ShowModal() != wx.ID_OK:
             return
         bag_file = dlg.GetPath()
-        log.debug("input: %s" % bag_file)
+        logger.debug("input: %s" % bag_file)
         return bag_file
 
     def _ask_file_output(self, fmt_name, fmt_ext):
         """ Open a file dialog to make the user to select the output filename """
-        log.debug("format: %s [.%s]" % (fmt_name, fmt_ext))
+        logger.debug("format: %s [.%s]" % (fmt_name, fmt_ext))
         dlg = wx.FileDialog(self, "Select output %s File" % fmt_name,
                             wildcard='%s Files (*.%s)|*.%s|All Files (*.*)|*.*' % (fmt_name, fmt_ext, fmt_ext),
                             style=wx.FD_SAVE)
         if dlg.ShowModal() != wx.ID_OK:
             return
         out_file = dlg.GetPath()
-        log.debug("output: %s" % out_file)
+        logger.debug("output: %s" % out_file)
         return out_file
 
     @classmethod

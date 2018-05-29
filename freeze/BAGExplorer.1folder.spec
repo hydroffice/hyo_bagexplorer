@@ -8,9 +8,13 @@
 #
 # The resulting .exe file is placed in the dist/BAGExplorer folder.
 
+# REQUIRED TO MANUALLY COPY: wx\lib\pubsub\core
+
 from PyInstaller.building.build_main import Analysis, PYZ, EXE, COLLECT, BUNDLE, TOC
 from PyInstaller import is_darwin
 import os
+
+from hyo.bagexplorer import __version__ as bagexplorer_version
 
 
 def collect_pkg_data(package, include_py_files=False, subdir=None):
@@ -56,6 +60,7 @@ if is_darwin:
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
              hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack',
+                            'wx.adv', 'wx.html', 'wx.xml', 'wx.lib.pubsub.core.publisher',
                             'scipy.linalg', 'scipy.integrate'],  # for cartopy
              excludes=["PySide", "PyQt4", "pandas", "IPython",
                        "FixTk", "tcl", "tk", "_tkinter", "tkinter", "Tkinter"],
@@ -66,7 +71,7 @@ pyz = PYZ(a.pure)
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='BAGExplorer',
+          name='BAGExplorer.%s' % bagexplorer_version,
           debug=False,
           strip=None,
           upx=True,
@@ -82,7 +87,7 @@ coll = COLLECT(exe,
                cartopy_aux,
                strip=None,
                upx=True,
-               name='BAGExplorer')
+               name='BAGExplorer.%s' % bagexplorer_version)
 if is_darwin:
     app = BUNDLE(coll,
                  name='BAGExplorer.app',

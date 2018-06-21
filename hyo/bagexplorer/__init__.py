@@ -10,7 +10,7 @@ import logging
 log = logging.getLogger(__name__)
 log.addHandler(logging.NullHandler())
 
-__version__ = '0.5.6'
+__version__ = '0.5.7'
 __doc__ = 'BAG Explorer'
 __author__ = 'gmasetti@ccom.unh.edu, brc@ccom.unh.edu'
 __license__ = 'LGPLv3 license'

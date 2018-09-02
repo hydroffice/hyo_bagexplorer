@@ -8,7 +8,7 @@
 #
 # The resulting .exe file is placed in the dist/BAGExplorer folder.
 
-# REQUIRED TO MANUALLY COPY: wx\lib\pubsub\core
+# REQUIRED TO MANUALLY COPY: wx\lib\pubsub\core or pubsub\sub
 
 from PyInstaller.building.build_main import Analysis, PYZ, EXE, COLLECT, BUNDLE, TOC
 from PyInstaller import is_darwin
@@ -60,8 +60,8 @@ if is_darwin:
 a = Analysis(['BAGExplorer.py'],
              pathex=[],
              hiddenimports=['scipy.linalg.cython_blas', 'scipy.linalg.cython_lapack',
-                            'wx.adv', 'wx.html', 'wx.xml', 'wx.lib.pubsub.core.publisher',
-                            'scipy.linalg', 'scipy.integrate'],  # for cartopy
+                            'wx.adv', 'wx.html', 'wx.xml', 'pubsub.pub',
+                            'scipy.linalg', 'scipy.integrate', "scipy._lib.messagestream"],  # for cartopy
              excludes=["PySide", "PyQt4", "pandas", "IPython",
                        "FixTk", "tcl", "tk", "_tkinter", "tkinter", "Tkinter"],
              hookspath=None,

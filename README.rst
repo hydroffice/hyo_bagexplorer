@@ -6,7 +6,7 @@ HydrOffice BAG Explorer
 
 * Code: `GitHub repo <https://github.com/hydroffice/hyo_bagexplorer <https://github.com/hydroffice/hyo_bagexplorer>`_
 * Project page: `url <https://www.hydroffice.org/bag/main>`_
-* Download page: `url <https://bitbucket.org/giumas/hyo_bagexplorer/downloads/>`_
+* Download page: `url <https://bitbucket.org/hydroffice/hyo_bagexplorer/downloads/>`_
 * License: LGPLv3 license (See `LICENSE <https://www.hydroffice.org/license/>`_)    
 
 General info

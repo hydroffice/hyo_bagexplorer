@@ -4,6 +4,10 @@ HydrOffice BAG Explorer
 .. image:: https://www.hydroffice.org/static/mybag/img/logo.png
     :alt: logo
 
+* Code: `GitHub repo <https://github.com/hydroffice/hyo_bagexplorer <https://github.com/hydroffice/hyo_bagexplorer>`_
+* Project page: `url <https://www.hydroffice.org/bag/main>`_
+* Download page: `url <https://bitbucket.org/giumas/hyo_bagexplorer/downloads/>`_
+* License: LGPLv3 license (See `LICENSE <https://www.hydroffice.org/license/>`_)    
 
 General info
 ------------
@@ -55,12 +59,3 @@ Creation of MAC OS dmg
 ~~~~~~~~~~~~~~~~~~~~~~
 
 * ``appdmg spec.json dist/BAGExplorer.dmg``
-
-
-Other info
-----------
-
-* GitHub: `repo <https://github.com/hydroffice/hyo_bagexplorer <https://github.com/hydroffice/hyo_bagexplorer>`_
-* Project page: `url <https://www.hydroffice.org/bag/main>`_
-* Download page: `url <https://bitbucket.org/giumas/hyo_bagexplorer/downloads/>`_
-* License: LGPLv3 license (See `LICENSE <https://www.hydroffice.org/license/>`_)
